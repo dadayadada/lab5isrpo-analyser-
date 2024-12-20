@@ -1,0 +1,46 @@
+{
+  "name": "asymptotic-complexity-analyzer",
+  "displayName": "Asymptotic Complexity Analyzer",
+  "description": "Analyzes the asymptotic complexity of your code.",
+  "version": "1.0.0",
+  "publisher": "Cellardoor",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "activationEvents": [
+    "onCommand:asymptotic-complexity-analyzer.analyze"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "asymptotic-complexity-analyzer.analyze",
+        "title": "Analyze Asymptotic Complexity"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "asymptotic-complexity-analyzer.analyze",
+        "key": "ctrl+alt+z",  
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts"
+  },
+  "dependencies": {
+    "tree-sitter": "^0.21.1",
+    "tree-sitter-cpp": "^0.23.4"
+  },
+  "devDependencies": {
+    "@types/node": "^18.x",
+    "@types/vscode": "^1.74.0",
+    "tree-sitter": "^0.21.1",
+    "tree-sitter-cpp": "^0.23.4",
+    "typescript": "^4.9.x"
+  }
+}
